@@ -159,6 +159,9 @@ static jint npu_det_set_model(JNIEnv *env, jclass clazz __unused,jint modelType)
 		case 2:
 		type = DET_YOLO_V3;
 		break;
+		case 3:
+		type = DET_YOLO_TINY;
+		break;		
 		default:
 		type = DET_FACENET;
 		break;
@@ -201,6 +204,9 @@ static jint npu_det_get_result(JNIEnv *env, jclass clazz __unused,jobject detres
 		case 2:
 		type = DET_YOLO_V3;
 		break;
+		case 3:
+		type = DET_YOLO_TINY;
+		break;			
 		default:
 		type = DET_FACENET;
 		break;
@@ -311,6 +317,9 @@ static jint npu_det_set_input(JNIEnv *env, jclass clazz __unused,jbyteArray imgb
 		case 2:
 		type = DET_YOLO_V3;
 		break;
+		case 3:
+		type = DET_YOLO_TINY;
+		break;			
 		default:
 		type = DET_FACENET;
 		break;

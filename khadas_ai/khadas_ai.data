@@ -1,0 +1,7 @@
+classes= 2
+train  = khadas_ai/train.txt
+valid  = khadas_ai/2007_test.txt
+names = khadas_ai/khadas_ai.names
+backup = backup
+results = khadas_ai/
+eval = coco

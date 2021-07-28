@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>5.jpg</filename>
+	<path>Y:\rk_npu\YOLO_images_script\xxx\hlm\JPEGImages\5.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>568</width>
+		<height>300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>KuLi</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>243</xmin>
+			<ymin>1</ymin>
+			<xmax>340</xmax>
+			<ymax>96</ymax>
+		</bndbox>
+	</object>
+</annotation>

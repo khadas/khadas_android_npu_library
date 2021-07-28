@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>16.jpg</filename>
+	<path>Y:\rk_npu\YOLO_images_script\xxx\hlm\JPEGImages\16.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>500</width>
+		<height>370</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>DuLanTe</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>171</xmin>
+			<ymin>124</ymin>
+			<xmax>227</xmax>
+			<ymax>199</ymax>
+		</bndbox>
+	</object>
+</annotation>

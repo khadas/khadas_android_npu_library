@@ -45,8 +45,8 @@ void yolov3_preprocess(input_image_t imageData, uint8_t *ptr)
 /* Postprocess */
 
 //char *voc_names[] = {"aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"};
-static char *coco_names[] = {"person","bicycle","car","motorbike","aeroplane","bus","train","truck","boat","traffic light","fire hydrant","stop sign","parking meter","bench","bird","cat","dog","horse","sheep","cow","elephant","bear","zebra","giraffe","backpack","umbrella","handbag","tie","suitcase","frisbee","skis","snowboard","sports ball","kite","baseball bat","baseball glove","skateboard","surfboard","tennis racket","bottle","wine glass","cup","fork","knife","spoon","bowl","banana","apple","sandwich","orange","broccoli","carrot","hot dog","pizza","donut","cake","chair","sofa","pottedplant","bed","diningtable","toilet","tvmonitor","laptop","mouse","remote","keyboard","cell phone","microwave","oven","toaster","sink","refrigerator","book","clock","vase","scissors","teddy bear","hair drier","toothbrush"};
-
+//static char *coco_names[] = {"person","bicycle","car","motorbike","aeroplane","bus","train","truck","boat","traffic light","fire hydrant","stop sign","parking meter","bench","bird","cat","dog","horse","sheep","cow","elephant","bear","zebra","giraffe","backpack","umbrella","handbag","tie","suitcase","frisbee","skis","snowboard","sports ball","kite","baseball bat","baseball glove","skateboard","surfboard","tennis racket","bottle","wine glass","cup","fork","knife","spoon","bowl","banana","apple","sandwich","orange","broccoli","carrot","hot dog","pizza","donut","cake","chair","sofa","pottedplant","bed","diningtable","toilet","tvmonitor","laptop","mouse","remote","keyboard","cell phone","microwave","oven","toaster","sink","refrigerator","book","clock","vase","scissors","teddy bear","hair drier","toothbrush"};
+static char *coco_names[] = {"KuLi","DuLanTe"};
 
 static float overlap(float x1, float w1, float x2, float w2)
 {
@@ -231,7 +231,7 @@ static void flatten(float *x, int size, int layers, int batch, int forward)
 int yolo_v3_post_process_onescale(float *predictions, int input_size[3] , float *biases, box *boxes, float **probs, float threshold_in)
 {
     int i,j;
-    int num_class = 80;
+    int num_class = 2;
     int coords = 4;
     int bb_size = coords + num_class + 1;
     int num_box = input_size[2]/bb_size;
@@ -294,13 +294,13 @@ void yolov3_postprocess(vsi_nn_graph_t *graph, pDetResult resultData)
     nn_height = tensor->attr.size[1];
     nn_channel = tensor->attr.size[2];
     (void)nn_channel;
-    int size[3]={nn_width/32, nn_height/32,85*3};
+    int size[3]={nn_width/32, nn_height/32,7*3};
 
     int sz[10];
     int i, j, stride;
     int output_cnt = 0;
     int output_len = 0;
-    int num_class = 80;
+    int num_class = 2;
     float threshold = 0.5;
     float iou_threshold = 0.4;
     uint8_t *tensor_data = NULL;
